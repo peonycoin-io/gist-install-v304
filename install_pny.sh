@@ -5,7 +5,7 @@ CONFIGFOLDER='/root/.peony'
 COIN_DAEMON='/usr/local/bin/pnyd'
 COIN_CLI='/usr/local/bin/pny-cli'
 COIN_REPO='https://github.com/PeonyTeam/peony/releases/download/v2.0.1/pny-2.0.1-x86_64-linux-gnu.tar.gz'
-COIN_NAME='peony'
+COIN_NAME='pny'
 COIN_PORT=16889
 
 RED='\033[0;31m'
@@ -46,7 +46,7 @@ function compile_node() {
   tar xvzf $COIN_ZIP --strip=2 ${COIN_DIR}/bin/${COIN_NAME,,}d ${COIN_DIR}/bin/${COIN_NAME,,}-cli>/dev/null 2>&1
   compile_error
   rm -f $COIN_ZIP >/dev/null 2>&1
-  cp func* /usr/local/bin
+  cp pny* /usr/local/bin
   compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd -
